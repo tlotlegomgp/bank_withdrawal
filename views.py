@@ -42,7 +42,7 @@ class WithdrawView(APIView):
         account_id = serializer.validated_data["accountID"]
 
         # Will throw 404 error if BankAccount with id is not found
-        account = get_object_or_404(BankAccount, account_id=account_id)
+        account = get_object_or_404(BankAccount, id=account_id)
 
         # We dont have check if balance is null
         # We can assume balanace cannot be null in the model and is defaulted to 0 on entry creation
